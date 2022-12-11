@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    /* position: absolute; */
+    /* display: grid; */
+    height: 100%;
+    place-items: center;
+    background-image: url("ai.png");
+    /* z-index: -10px; */
+    background-size:contain;
+    
+
+    /* background-image: linear-gradient(rgb(211, 211, 220) , rgb(84, 136, 220)); */
+    /* background-color: "C:\Users\drish\Downloads.jpg"; */
+}
+
+.center{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.outer{
+    margin: 0 50px;
+    background: linear-gradient(#14ffe9 , #ffeb3b , #ff00e0);
+}
+
+.circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.outer button, .outer span{
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.outer button{
+    position: relative;
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+    z-index: 9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.circle button{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.outer span{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: inherit;  
+}
+
+.circle span{
+    position: relative;
+    border-radius: 50% ;
+}
+
+.outer:hover span:nth-child(1){
+    filter: blur(7px);
+}
+
+.outer:hover span:nth-child(2){
+    filter: blur(14px);
+}
+
+.outer:hover{
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate{
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.dashboard{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    background: lightblue ;
+    border-radius: 0.5px;
+}
