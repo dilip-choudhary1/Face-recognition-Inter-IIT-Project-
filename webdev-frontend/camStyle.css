@@ -1,0 +1,142 @@
+body {
+    /* font-family: system-ui; */
+    background-color: #e4d2c4;
+    color: white;
+    text-align: center;
+  }
+
+.full{
+    margin-top: 0px;
+    background-color: rgb(241, 218, 239);
+    height: 700px;
+}
+
+.mycont{
+    padding-top: 25px;
+    
+}
+
+img {
+border-radius: 50%;
+margin-right: 10px;
+}
+
+.booth{
+	width:60%;
+	height:50%;
+	background:#ccc;
+	border:10px solid #ddd;
+	margin: 0px auto;
+}
+
+.My-navbar{
+    /* display: flex; */
+    font-family: 'Noto Nastaliq Urdu', serif;
+    text-decoration: none;
+    color: black;
+    height: 45px;
+    width: 100%;
+    /* background: linear-gradient(rgb(89, 168, 228), white); */
+    background-image: linear-gradient(to bottom right,rgb(139, 157, 245),rgb(235, 222, 222));
+    padding-bottom: 0px;
+}
+
+.My-navbar .Navelem1 a{
+    margin-top: 0.25%;
+    margin-left: 2%;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* font-family: 'Noto Nastaliq Urdu', serif; */
+    float: left;
+    color: black;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.My-navbar .Navelem2{
+    margin-left: 90%;
+    /* float: right; */
+    color: black;
+    text-decoration: none;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.load{
+    display: inline;
+    padding-left: 400px;
+    /* padding-right: 5px; */
+    /* padding-top: 10px; */
+    height: 60px;
+    width: 800px;
+}
+
+.faceVerify{
+    padding-top: 10px;
+    float: left;
+    padding-right: 15px;
+    flex-basis: 40%;
+    flex-grow: 5;
+    left: 40%;
+    font-size: 40px;
+    text-align: center;
+    font-family: cursive;
+    color: rgb(1, 13, 77);
+    /* margin: 12px;
+    width: 600; */
+}
+
+.load .Loadcontainer{
+    padding-top: 25px;
+    /* flex-grow: 1; */
+    float: left;
+    /* width: 40px; */
+    /* margin: 70px auto; */
+  
+}
+  
+.dot{
+width: 10px;
+height: 10px;
+display: inline-block;
+/* background-color: white; */
+border-radius: 50%;
+
+}
+
+.dot1{
+background-color: #1abc9c;
+animation: jump-up 0.6s 0.1s linear infinite;
+}
+
+.dot2{
+background-color: #ffd64a;
+animation: jump-up 0.6s 0.2s linear infinite;
+}
+
+.dot3{
+background-color:#e067af;
+animation: jump-up 0.6s 0.3s linear infinite;
+}
+
+@keyframes jump-up{
+50%{
+    transform: translate(0, 15px);
+}
+}
+  
+
+/* .mycont{
+    margin-top: 0px;
+    background-color: rgb(241, 218, 239);
+    height: 700px;
+} */
+
+.clickCont{
+    border: black;
+    margin-top: 10px;
+    margin-right: 40%;
+    align-items: center;
+}
