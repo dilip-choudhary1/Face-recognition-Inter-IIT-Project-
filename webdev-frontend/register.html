@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Courgette&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="area">
+
+    <div class="My-navbar">
+        <div class="Navelem1">
+            <a href="#">Back</a>
+        </div>
+        <div class="Navelem2">
+            <script>
+                var currentDate = new Date();
+                var month = currentDate.getMonth();
+                var day = currentDate.getDate();
+                var year = currentDate.getFullYear();
+                var fullDate = day + "/" + month + "/" + year;
+                document.write(fullDate);
+            </script>
+        </div>
+    </div>
+    <div class="loader">
+        <div class="heading">
+            Face Register
+        </div>
+
+        <div class="spinCont">
+            <div class="spinner-box">
+                <div class="leo-border-1">
+                  <div class="leo-core-1"></div>
+                </div> 
+                <div class="leo-border-2">
+                  <div class="leo-core-2"></div>
+                </div> 
+            </div>
+        </div>
+
+
+    </div>
+    <p><span id="errorMsg"></span></p>
+    
+    <!-- Stream video via webcam -->
+
+    <div class="both">
+        <div class="mainCam">
+            <div class="video-wrap">
+                <video id="video" playsinline autoplay></video>
+            </div>
+        </div>
+    
+        <!-- Trigger canvas web API -->
+        <!-- <div class="controller">
+            <button id="snap">Capture</button>
+        </div> -->
+    
+        <!-- Webcam video snapshot -->
+        <canvas id="canvas" width = "500" height="240" ></canvas>
+    </div>
+    
+    <div class="controller" id="snap">
+        <div class="butCont">
+            <button class="btn" data-btn>Capture</button>
+            <div class="checkmark-container">
+                <svg x="0px" y="0px" fill="none" class="checkmark-svg" viewBox="0 0 25 30">
+                <path d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2"/>
+            </svg>
+        </div>
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelector("[data-btn]")
+        btn.addEventListener("click", () => {
+        btn.classList.add("animating")
+    })
+    </script>
+    <div class="captured">
+        <button id="snap_result">Captured</button>
+    </div>
+
+    <div >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </div >
+
+    <script>
+        'use strict';
+
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snap = document.getElementById("snap");
+        const errorMsgElement = document.querySelector('span#errorMsg');
+
+        const constraints = {
+            audio: true,
+            video: {
+                width: 1280, height: 720
+            }
+        };
+
+        // Access webcam
+        async function init() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            } 
+            catch (e) {
+                // errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+            }
+        }
+
+        // Success
+        function handleSuccess(stream) {
+            window.stream = stream;
+            video.srcObject = stream;
+        }
+
+        // Load init
+        init();
+
+        // Draw image
+        var context = canvas.getContext('2d');
+        var ifnot_taken = true;
+        snap.addEventListener("click", function() {
+            if (ifnot_taken) document.querySelector(".captured").classList.toggle("show");
+            context.drawImage(video, 0, 0, 500, 240);
+            ifnot_taken = false;
+        });
+    </script>
+    
+</body>
+</html>
