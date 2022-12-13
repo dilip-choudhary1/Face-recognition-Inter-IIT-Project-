@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bungee Shade:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Candal:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Koulen:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div">
+      <div class="frame-div">
+        <form class="desktop-1">
+          <img class="line-icon" alt="" src="public/line-1.svg" />
+          <section class="frame-section">
+            <div class="face-recognition-attendance">
+              FACE RECOGNITION & ATTENDANCE SYstem
+            </div>
+            <div class="rectangle-div"></div>
+            <div class="what-we-are-what-we-do-how">
+              <p class="what-we-are">What we are, what we do & how we do it?</p>
+              <p class="what-we-are">&nbsp;</p>
+              <p class="what-we-are">
+                Our Approach is Based On Machine Learning to Identify faces
+              </p>
+              <p class="what-we-are">&nbsp;</p>
+              <p class="what-we-are">...</p>
+              <p class="what-we-are">&nbsp;</p>
+              <p class="what-we-are">Terms & Conditions</p>
+              <p class="what-we-are">1.</p>
+              <p class="what-we-are">2.</p>
+              <p class="p3">3.</p>
+            </div>
+          </section>
+          <textarea class="rectangle-textarea"></textarea
+          ><span class="i-agree-to-terms-conditions">
+            I AGREE TO TERMS & CONDITIONS</span
+          ><button
+            class="icon-park-outlinecheckbox"
+            autofocus
+            id="iconParkOutlinecheckbox"
+          ></button
+          ><img class="group-icon" alt="" src="public/group.svg" /><img
+            class="ai-1-icon"
+            alt=""
+            src="public/ai-1@2x.png"
+          /><img
+            class="rectangle-icon"
+            alt=""
+            src="public/rectangle-1.svg"
+          /><button class="s-t-a-r-t" autofocus>S T A R T</button>
+          <div class="rectangle-div1"></div>
+          <div class="rectangle-div2" data-animate-on-scroll></div>
+          <div class="rectangle-div3"></div>
+        </form>
+        <div class="frame-div1"></div>
+        <button class="group" id="group">
+          <img class="vector-icon" alt="" src="public/vector.svg" /><img
+            class="vector-icon1"
+            alt=""
+            src="public/vector1.svg"
+          />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var iconParkOutlinecheckbox = document.getElementById(
+        "iconParkOutlinecheckbox"
+      );
+      if (iconParkOutlinecheckbox) {
+        iconParkOutlinecheckbox.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+      
+      var group = document.getElementById("group");
+      if (group) {
+        group.addEventListener("click", function (e) {
+          window.location.href = "./component.html";
+        });
+      }
+      var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      </script>
+  </body>
+</html>
