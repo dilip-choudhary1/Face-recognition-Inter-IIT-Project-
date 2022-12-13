@@ -58,19 +58,27 @@
             class="icon-park-outlinecheckbox1"
             autofocus
             id="iconParkOutlinecheckbox"
-          ></button
-          ><img class="group-icon1" alt="" src="public/group1.svg" /><img
+          >
+          </button
+          >
+          <img
             class="ai-1-icon1"
             alt=""
             src="public/ai-11@2x.png"
-          /><img
-            class="rectangle-icon1"
-            alt=""
-            src="public/rectangle-11.svg"
-          /><button class="s-t-a-r-t1" autofocus disabled>S T A R T</button>
+          />
+          
+          <button class="s-t-a-r-t1" autofocus>S T A R T</button>
           <div class="rectangle-div5"></div>
           <div class="rectangle-div6" data-animate-on-scroll></div>
           <div class="rectangle-div7"></div>
+          <img
+            class="rectangle-icon1"
+            alt=""
+            src="public/rectangle-11.svg"
+          />
+          <button class="group" id="group">
+          <img class="group-icon1" alt="" src="public/group1.svg" />
+        </button>
         </div>
       </div>
     </div>
@@ -82,6 +90,13 @@
       if (iconParkOutlinecheckbox) {
         iconParkOutlinecheckbox.addEventListener("click", function (e) {
           window.location.href = "/";
+        });
+      }
+
+      var group = document.getElementById("group");
+      if (group) {
+        group.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
         });
       }
       var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
