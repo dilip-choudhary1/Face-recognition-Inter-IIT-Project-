@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+</head>
+
+<body>
+    Username:
+    
+    <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+    
+    <input type="button" value="Take a Snap and Download Picture" id="btPic" 
+        onclick="takeSnapShot()" /> 
+</body>
+
+<script>
+    // CAMERA SETTINGS.
+    
+    Webcam.set({
+        width: 220,
+        height: 190,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+    Webcam.attach('#camera');
+
+    // TAKE A SNAPSHOT.
+    takeSnapShot = function () {
+        Webcam.snap(function (data_uri) {
+            downloadImage('1', data_uri);
+        });
+    }
+
+    // DOWNLOAD THE IMAGE.
+    downloadImage = function (name, datauri) {
+        var a = document.createElement('a');
+        a.setAttribute('download', name + '.png');
+        a.setAttribute('href', datauri);
+        a.click();
+    }
+</script>
+</html>
