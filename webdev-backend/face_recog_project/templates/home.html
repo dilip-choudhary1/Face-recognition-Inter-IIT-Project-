@@ -9,6 +9,9 @@
     <script src='main.js'></script>
 </head>
 <body>
+    <span>Hi {{ request.user }}</span>
     <h1>Welcome to Home</h1>
+    <span><a href="{% url 'account' %}">Settings</a></span>
+    <span><a href="{% url 'logout' %}">Logout</a></span>
 </body>
 </html>
